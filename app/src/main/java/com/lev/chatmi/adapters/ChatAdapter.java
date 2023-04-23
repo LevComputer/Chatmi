@@ -1,14 +1,13 @@
 package com.lev.chatmi.adapters;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.lev.chatmi.databinding.ItemContainerRecievedMessageBinding;
+import com.lev.chatmi.databinding.ItemContainerReceivedMessageBinding;
 import com.lev.chatmi.databinding.ItemContainerSentMessageBinding;
 import com.lev.chatmi.models.ChatMessage;
 
@@ -42,7 +41,7 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         }
        else {
             return new ReceivedMessageViewHolder(
-                    ItemContainerRecievedMessageBinding.inflate(
+                    ItemContainerReceivedMessageBinding.inflate(
                             LayoutInflater.from(parent.getContext()),
                             parent,
                             false
@@ -94,17 +93,17 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
     static class ReceivedMessageViewHolder extends RecyclerView.ViewHolder{
 
-        private final ItemContainerRecievedMessageBinding binding;
+        private final ItemContainerReceivedMessageBinding binding;
 
-        ReceivedMessageViewHolder(ItemContainerRecievedMessageBinding itemContainerRecievedMessageBinding){
-            super(itemContainerRecievedMessageBinding.getRoot());
-            binding = itemContainerRecievedMessageBinding;
+        ReceivedMessageViewHolder(@NonNull ItemContainerReceivedMessageBinding itemContainerReceivedMessageBinding){
+            super(itemContainerReceivedMessageBinding.getRoot());
+            binding = itemContainerReceivedMessageBinding;
         }
 
-        void setData(ChatMessage chatMessage, Bitmap recieverProfileImage){
+        void setData(ChatMessage chatMessage, Bitmap receiverProfileImage){
             binding.textMessage.setText(chatMessage.message);
             binding.textDateTime.setText(chatMessage.dateTime);
-            binding.imageProfile.setImageBitmap(recieverProfileImage);
+            binding.imageProfile.setImageBitmap(receiverProfileImage);
         }
 
     }

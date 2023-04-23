@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_4sdp"
         android:layout_marginLeft="@dimen/_4sdp"
-        android:background="@drawable/background_recieved_message"
+        android:background="@drawable/background_received_message"
         android:paddingStart="@dimen/_12sdp"
         android:paddingTop="@dimen/_8sdp"
         android:paddingEnd="@dimen/_12sdp"

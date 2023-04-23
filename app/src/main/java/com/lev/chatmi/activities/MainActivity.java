@@ -14,17 +14,24 @@ import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.ktx.Firebase;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.lev.chatmi.adapters.RecentConversationsAdapter;
 import com.lev.chatmi.databinding.ActivityMainBinding;
+import com.lev.chatmi.models.ChatMessage;
 import com.lev.chatmi.models.User;
 import com.lev.chatmi.utilities.Constants;
 import com.lev.chatmi.utilities.PreferenceManager;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
     private PreferenceManager preferenceManager;
+    private List<ChatMessage> conversations;
+    private RecentConversationsAdapter conversationsAdapter;
+    private FirebaseFirestore database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +39,17 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         preferenceManager = new PreferenceManager(getApplicationContext());
+        init();
         loadUserDetails();
         getToken();
         setListeners();
+    }
+
+    private void init() {
+        conversations = new ArrayList<>();
+        conversationsAdapter = new RecentConversationsAdapter(conversations);
+        binding.conversationsRecyclerView.setAdapter(conversationsAdapter);
+        database = FirebaseFirestore.getInstance();
     }
 
     private void setListeners(){
@@ -62,8 +77,8 @@ public class MainActivity extends AppCompatActivity {
                         preferenceManager.getString(Constants.KEY_USER_ID)
                 );
         documentReference.update(Constants.KEY_FCM_TOKEN, token)
-                .addOnSuccessListener(unused -> Toast.makeText(this, "Token Update Successfully", Toast.LENGTH_SHORT).show())
-                .addOnFailureListener(e -> Toast.makeText(this, "Unable To Update Token", Toast.LENGTH_SHORT).show());
+                .addOnSuccessListener(unused -> Toast.makeText(this, "Sign In Successfully", Toast.LENGTH_SHORT).show())
+                .addOnFailureListener(e -> Toast.makeText(this, "Unable To Sign In", Toast.LENGTH_SHORT).show());
     }
 
     private void signOut(){
