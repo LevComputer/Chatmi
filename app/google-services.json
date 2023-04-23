@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "637368455266",
+    "project_id": "chatmi-86c2c",
+    "storage_bucket": "chatmi-86c2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:637368455266:android:cc0e301f04c395e10b413b",
+        "android_client_info": {
+          "package_name": "com.lev.chatmi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "637368455266-ov7d6kc2dq77sgfpj94dblmcghdppi2f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgQJtGPpOd6dpfSRc1obg_HZiwTLAa5Po"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "637368455266-ov7d6kc2dq77sgfpj94dblmcghdppi2f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
