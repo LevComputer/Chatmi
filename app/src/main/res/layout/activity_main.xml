@@ -18,8 +18,7 @@
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:riv_corner_radius="@dimen/_8sdp"
-        />
+        app:riv_corner_radius="@dimen/_8sdp" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageSignOut"
@@ -32,8 +31,7 @@
         android:src="@drawable/ic_logout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:tint="@color/white"
-        />
+        android:tint="@color/white" />
 
     <TextView
         android:id="@+id/textName"
@@ -49,8 +47,7 @@
         app:layout_constraintBottom_toBottomOf="@id/imageSignOut"
         app:layout_constraintEnd_toStartOf="@id/imageSignOut"
         app:layout_constraintStart_toEndOf="@id/imageProfile"
-        app:layout_constraintTop_toTopOf="@id/imageProfile"
-        />
+        app:layout_constraintTop_toTopOf="@id/imageProfile" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -64,6 +61,7 @@
             android:id="@+id/conversationsRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:clipToPadding="false"
             android:orientation="vertical"
             android:overScrollMode="never"
             android:padding="@dimen/_20sdp"
@@ -86,10 +84,9 @@
         android:layout_marginBottom="@dimen/_24sdp"
         android:contentDescription="@string/app_name"
         android:src="@drawable/ic_add"
-        android:backgroundTint="@color/primary"
+        app:backgroundTint="@color/primary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:tint="@color/white"
-        />
+        app:tint="@color/white" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
